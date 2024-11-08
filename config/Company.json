@@ -1,0 +1,54 @@
+{
+  "companies": [
+    {
+      "name": "100Starlings",
+      "location": "London, UK",
+      "URL": "https://100starlings.com/careers"
+    },
+    {
+      "name": "3nder",
+      "location": "London, UK",
+      "URL": "https://feeld.co/careers#jobs-list"
+    },
+    {
+      "name": "Accounto Technology",
+      "location": "Basel, Switzerland",
+      "URL": "https://accounto-ag.jobs.personio.com/"
+    },
+    {
+      "name": "Actyx",
+      "location": "Munchen, Germany",
+      "URL": "https://actyx.notion.site/Jobs-Actyx-2e33f9042fcc45bdaa0b369a1af4897d"
+    },
+    {
+      "name": "Amazee",
+      "location": "Zurich, Switzerland",
+      "URL": "https://www.amazee.io/careers"
+    },
+    {
+      "name": "Antavo",
+      "location": "London, UK",
+      "URL": "https://antavo.com/career/"
+    },
+    {
+      "name": "Appway",
+      "location": "Prague, Czech Republic",
+      "URL": "https://fnz.wd3.myworkdayjobs.com/fnz_careers?locations=8437ea1994111000f14a91b271e70000&locations=565ae0c72c91019ec9589cf01e004d01"
+    },
+    {
+      "name": "Appway",
+      "location": "Paris, France",
+      "URL": "https://fnz.wd3.myworkdayjobs.com/fnz_careers?locations=2548b04a9b4b010196aa7610da610000"
+    },
+    {
+      "name": "Appway",
+      "location": "Munich, Germany",
+      "URL": "https://fnz.wd3.myworkdayjobs.com/fnz_careers?locations=e2efbcc6799f1001937ab7babdf60000&locations=565ae0c72c91010c21a6b0f01e008901&locations=565ae0c72c91013a36fdaef01e008401&locations=57469a7e746e100192ac089f55890000"
+    },
+    {
+      "name": "Appway",
+      "location": "Dublin, Ireland",
+      "URL": "https://fnz.wd3.myworkdayjobs.com/fnz_careers?locations=be05473558a3019b603651023e08cf20"
+    }
+  ]
+}

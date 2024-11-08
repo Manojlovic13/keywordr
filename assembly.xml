@@ -1,0 +1,58 @@
+<assembly xmlns="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.2"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.2 http://maven.apache.org/xsd/assembly-1.1.2.xsd">
+    <id>dist</id>
+    <formats>
+        <format>zip</format>
+    </formats>
+<!--    <includeBaseDirectory>false</includeBaseDirectory>-->
+<!--
+/keywordr-version
+/bin
+/lib
+/config
+/chromedriver
+-->
+    <fileSets>
+        <!-- Include the main JAR -->
+        <fileSet>
+            <directory>${project.build.directory}</directory>
+            <includes>
+                <include>${project.build.finalName}.jar</include>
+            </includes>
+            <outputDirectory>\lib</outputDirectory>
+        </fileSet>
+        <!-- Include dependencies -->
+        <fileSet>
+            <directory>${project.build.directory}\dependency-jars</directory>
+            <outputDirectory>\lib</outputDirectory>
+        </fileSet>
+        <!-- Include configuration -->
+        <fileSet>
+            <directory>${project.basedir}\config</directory>
+            <includes>
+                <include>*</include>
+            </includes>
+            <outputDirectory>\configuration</outputDirectory>
+        </fileSet>
+        <!-- Include chromedriver -->
+        <fileSet>
+            <directory>${project.basedir}\chromedriver</directory>
+            <includes>
+                <include>chromedriver.exe</include>
+                <include>README.md</include>
+            </includes>
+            <outputDirectory>chromedriver</outputDirectory>
+            <useDefaultExcludes>false</useDefaultExcludes>
+            <fileMode>755</fileMode>
+        </fileSet>
+        <!-- Include binary -->
+        <fileSet>
+            <directory>${project.basedir}\bin</directory>
+            <includes>
+                <include>keywordr.*</include>
+            </includes>
+            <outputDirectory>\bin</outputDirectory>
+        </fileSet>
+    </fileSets>
+</assembly>
