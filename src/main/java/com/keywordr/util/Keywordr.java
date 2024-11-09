@@ -37,8 +37,13 @@ public class Keywordr {
             for (Element linkTag : linkTags) {
                 if(aTagContainsAnyKeyword(linkTag, keywords)) {
                     String href = linkTag.attr("href");
+                    // If href is relative path, concat it with company URL
                     if (href.startsWith("/")) {
                         href = company.getURL().substring(0,indexOfNthChar(company.getURL(),'/',3)) + href;
+                    }
+                    // Skip anchor links
+                    if (href.startsWith("#")) {
+                        continue;
                     }
                     jobs.add(new Job(company, href, new HashSet<>()));
                 }
