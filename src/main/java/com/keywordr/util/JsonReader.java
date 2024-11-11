@@ -13,8 +13,6 @@ public class JsonReader {
         Gson gson = new GsonBuilder().create();
         List<T> objects = new ArrayList<>();
 
-        System.out.println("readObjectsFromJson file: " + filePath);
-
         try (FileReader reader = new FileReader(filePath)) {
             // Parse the JSON file
             JsonElement jsonElement = JsonParser.parseReader(reader);

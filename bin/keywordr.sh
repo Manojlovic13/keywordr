@@ -7,4 +7,4 @@ CLASSPATH="../lib/*:../lib/keywordr-1.0-SNAPSHOT.jar"
 java -cp "$CLASSPATH" com.keywordr.Main
 
 # Pause to keep the terminal open after execution
-read -p "Press any key to continue..."
+# read -p "Press any key to continue..."

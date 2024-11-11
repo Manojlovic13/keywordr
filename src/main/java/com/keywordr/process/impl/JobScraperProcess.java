@@ -5,21 +5,27 @@ import com.keywordr.data.Job;
 import com.keywordr.exception.KeywordrRuntimeException;
 import com.keywordr.process.api.ExecutionPlan;
 import com.keywordr.provider.ConfigurationProvider;
+import com.keywordr.provider.LoggerProvider;
 import com.keywordr.util.JsonReader;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import org.slf4j.Logger;
+
 public class JobScraperProcess extends ExecutionPlan<Set<Job>> {
 
     private ConfigurationProvider configurationProvider;
+    private Logger logger;
 
     @Override
     public void initialize(Map<String, Object> initializer) {
         try {
             configurationProvider = (ConfigurationProvider) initializer.get("configurationProvider");
-        } catch (ClassCastException e) {
+            logger = LoggerProvider.newInstance(JobScraperProcess.class);
+        } catch (ClassCastException |IOException e) {
             throw new KeywordrRuntimeException("Failed to initialize JobScraperProcess with message: " + e.getMessage());
         }
     }
@@ -31,6 +37,9 @@ public class JobScraperProcess extends ExecutionPlan<Set<Job>> {
             throw new IllegalStateException("JobScraperProcess is not initialized!");
         }
 
+        logger.info("Executing job scraper process.");
+        logger.info("Reading company.json file.");
+
         // Read Company.json file
         List<Company> companies =
                 JsonReader.readObjectsFromJson(
@@ -40,8 +49,7 @@ public class JobScraperProcess extends ExecutionPlan<Set<Job>> {
                         "companies"
                         );
 
-        System.out.println(companies.size() + " companies to check...");
-
+        logger.info("Reading done. Total of " + companies.size() + " companies to check!");
 
         // For-each company check if it has any job listings
         JobListingProcess jobListingProcess = new JobListingProcess();
@@ -51,9 +59,7 @@ public class JobScraperProcess extends ExecutionPlan<Set<Job>> {
                 ));
         Set<Job> jobs = jobListingProcess.execute();
 
-        System.out.println("Okay, I found " + jobs.size() + " jobs!");
-
-        // For-each job listing, check if job listing contains tech keywords (flag job with used tech keywords)
+        // For-each job flag job with used tech keywords
         JobKeywordFlagProcess jobKeywordFlagProcess = new JobKeywordFlagProcess();
         jobKeywordFlagProcess.initialize(Map.of(
                 "configurationProvider", configurationProvider,
@@ -61,7 +67,7 @@ public class JobScraperProcess extends ExecutionPlan<Set<Job>> {
         ));
         jobs = jobKeywordFlagProcess.execute();
 
-        System.out.println("DONE!");
+        logger.info("Job scraper process done.");
 
         // Return list of jobs
         return jobs;
