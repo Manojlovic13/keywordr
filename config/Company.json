@@ -49,6 +49,26 @@
       "name": "Appway",
       "location": "Dublin, Ireland",
       "URL": "https://fnz.wd3.myworkdayjobs.com/fnz_careers?locations=be05473558a3019b603651023e08cf20"
+    },
+    {
+      "name": "Microsoft",
+      "location": "Belgrade, Serbia",
+      "URL": "https://jobs.careers.microsoft.com/global/en/search?lc=Belgrade%2C%20Belgrade%2C%20Serbia&pg=1&pgSz=20&o=Relevance&flt=true&l=en_us"
+    },
+    {
+      "name": "Nordeus",
+      "location": "Belgrade, Serbia",
+      "URL": "https://nordeus.com/open-positions/"
+    },
+    {
+      "name": "Levi9",
+      "location": "Belgrade, Serbia",
+      "URL": "https://jobs.rs.levi9.com/"
+    },
+    {
+      "name": "Levi9",
+      "location": "Lasi, Romania",
+      "URL": "https://jobs.ro.levi9.com/"
     }
   ]
 }
