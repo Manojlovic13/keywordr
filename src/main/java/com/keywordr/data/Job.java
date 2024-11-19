@@ -5,14 +5,16 @@ import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.ToString;
 
-import java.util.HashSet;
+import java.io.Serializable;
+import java.util.List;
 
 @AllArgsConstructor
 @Getter
 @ToString
 @EqualsAndHashCode
-public class Job {
-    private Company company;
+public class Job implements Serializable {
+    private String companyName;
+    private String location;
     private String jobUrl;
-    private HashSet<String> keywords;
+    private List<String> keywords;
 }

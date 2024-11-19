@@ -18,6 +18,11 @@ public class ConfigurationProvider {
     public static final String PROPERTY_OUTPUT_JSON_FILE = "output_json_file_path";
     public static final String PROPERTY_OUTPUT_MODE = "output_mode";
     public static final String PROPERTY_DEFAULT_LOG_LEVEL = "default_log_level";
+    public static final String PROPERTY_FIRESTORE_ACCOUNT_KEY = "firestore_service_account_key_path";
+    public static final String PROPERTY_FIRESTORE_UPLOAD = "firestore_upload";
+    public static final String PROPERTY_DATABASE_URL = "firestore_database_url";
+    public static final String PROPERTY_COLLECTION_NAME = "firestore_collection_name";
+    public static final String PROPERTY_DOCUMENT_ID = "firestore_document_id";
 
     private ConfigurationProvider() {
         String CONFIGURATION_FILE_PATH;

@@ -11,6 +11,7 @@ import org.jsoup.select.Elements;
 import org.slf4j.Logger;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -65,7 +66,7 @@ public class Keywordr {
                         continue;
                     }
                     logger.debug("Found a job link adding it to a Job set.");
-                    jobs.add(new Job(company, href, new HashSet<>()));
+                    jobs.add(new Job(company.getName(), company.getLocation(), href, new ArrayList<>()));
                 }
             }
         }
