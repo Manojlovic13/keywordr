@@ -2,7 +2,7 @@ package com.keywordr;
 
 
 import com.keywordr.data.Job;
-import com.keywordr.firestore.FirestoreService;
+import com.keywordr.io.writer.FirestoreWriter;
 import com.keywordr.process.api.ExecutionPlan;
 import com.keywordr.process.impl.ExportToFileProcess;
 import com.keywordr.process.impl.ExportToFirestoreProcess;
@@ -18,7 +18,7 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("Please wait!");
         ConfigurationProvider configurationProvider = ConfigurationProvider.getInstance();
-        FirestoreService firestoreService;
+        FirestoreWriter firestoreWriter;
 
         // Execute job scraper process
         ExecutionPlan<Set<Job>> jobScraperProcess = new JobScraperProcess();

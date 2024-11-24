@@ -5,7 +5,7 @@ import com.keywordr.exception.KeywordrRuntimeException;
 import com.keywordr.process.api.ExecutionPlan;
 import com.keywordr.provider.ConfigurationProvider;
 import com.keywordr.provider.LoggerProvider;
-import com.keywordr.util.OutputFileWriter;
+import com.keywordr.io.writer.OutputFileWriter;
 import org.slf4j.Logger;
 
 import java.io.IOException;

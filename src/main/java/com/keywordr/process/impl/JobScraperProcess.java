@@ -6,7 +6,7 @@ import com.keywordr.exception.KeywordrRuntimeException;
 import com.keywordr.process.api.ExecutionPlan;
 import com.keywordr.provider.ConfigurationProvider;
 import com.keywordr.provider.LoggerProvider;
-import com.keywordr.util.JsonReader;
+import com.keywordr.io.reader.JsonReader;
 
 import java.io.IOException;
 import java.util.List;

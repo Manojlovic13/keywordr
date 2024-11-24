@@ -5,8 +5,8 @@ import com.keywordr.exception.KeywordrRuntimeException;
 import com.keywordr.process.api.ExecutionPlan;
 import com.keywordr.provider.ConfigurationProvider;
 import com.keywordr.provider.LoggerProvider;
-import com.keywordr.util.CsvReader;
-import com.keywordr.util.Keywordr;
+import com.keywordr.io.reader.CsvReader;
+import com.keywordr.service.Keywordr;
 import org.slf4j.Logger;
 
 import java.io.IOException;

@@ -1,4 +1,4 @@
-package com.keywordr.util;
+package com.keywordr.io.reader;
 
 import com.google.gson.*;
 import com.keywordr.exception.KeywordrRuntimeException;

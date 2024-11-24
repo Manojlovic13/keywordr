@@ -1,9 +1,10 @@
-package com.keywordr.util;
+package com.keywordr.service;
 
 import com.keywordr.data.Company;
 import com.keywordr.data.Job;
 import com.keywordr.exception.KeywordrRuntimeException;
 import com.keywordr.provider.LoggerProvider;
+import com.keywordr.io.reader.HTMLReader;
 import org.apache.commons.lang3.StringUtils;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Element;

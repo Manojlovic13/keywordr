@@ -1,4 +1,4 @@
-package com.keywordr.util;
+package com.keywordr.io.writer;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -6,6 +6,7 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.keywordr.data.Job;
 import com.keywordr.exception.KeywordrRuntimeException;
+import com.keywordr.io.reader.JsonReader;
 import org.apache.commons.lang3.StringUtils;
 
 import java.io.FileWriter;

@@ -1,4 +1,4 @@
-package com.keywordr.firestore;
+package com.keywordr.io.writer;
 
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.firestore.DocumentReference;
@@ -13,9 +13,9 @@ import java.io.IOException;
 import java.util.Map;
 import java.util.concurrent.ExecutionException;
 
-public class FirestoreService {
+public class FirestoreWriter {
     private final DocumentReference document;
-    public FirestoreService() throws IOException {
+    public FirestoreWriter() throws IOException {
         ConfigurationProvider configurationProvider = ConfigurationProvider.getInstance();
         String firestoreAccountKey = configurationProvider.getConfigurationProperty(
                 ConfigurationProvider.PROPERTY_FIRESTORE_ACCOUNT_KEY
