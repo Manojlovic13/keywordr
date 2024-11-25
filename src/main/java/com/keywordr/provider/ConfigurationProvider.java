@@ -115,6 +115,14 @@ public class ConfigurationProvider {
             configurationValidationList.add("Non valid configuration value provided for 'output_mode'!");
         }
 
+        // check append and empty file
+        if (valueOutputMode.equalsIgnoreCase("append") && valueOutputJsonFile.isEmpty()) {
+            configurationValidationList.add(
+                    "Non valid combination of configuration parameters." +
+                    "Output mode set to 'append' but output file not defined."
+                    );
+        }
+
         // read and validate 'firestore_upload'
         String valueFirestoreUpload = configurationFile.getProperty(PROPERTY_FIRESTORE_UPLOAD).strip();
         configurationMap.put(PROPERTY_FIRESTORE_UPLOAD, valueFirestoreUpload);
