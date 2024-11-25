@@ -4,6 +4,7 @@ package com.keywordr;
 import com.keywordr.data.Job;
 import com.keywordr.io.writer.FirestoreWriter;
 import com.keywordr.process.api.ExecutionPlan;
+import com.keywordr.process.impl.ConfigurationInitializationProcess;
 import com.keywordr.process.impl.ExportToFileProcess;
 import com.keywordr.process.impl.ExportToFirestoreProcess;
 import com.keywordr.process.impl.JobScraperProcess;
@@ -16,6 +17,13 @@ import java.util.Set;
 
 public class Main {
     public static void main(String[] args) {
+        // initialize and validate configuration
+        ConfigurationInitializationProcess configurationInitializationProcess
+                = new ConfigurationInitializationProcess();
+        if (!configurationInitializationProcess.execute()) {
+            return;
+        }
+
         System.out.println("Please wait!");
         ConfigurationProvider configurationProvider = ConfigurationProvider.getInstance();
         FirestoreWriter firestoreWriter;
